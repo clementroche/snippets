@@ -2,6 +2,7 @@
 
 vec4 RGBShift(sampler2D map, vec2 uv, vec2 offset, float power, float barrelness) {
     vec2 center = uv - vec2( .5 );
+    
     float d = power * length( center );
     normalize( center );
     vec2 value = mix( offset * power * 0.1, d * center * offset, barrelness);
